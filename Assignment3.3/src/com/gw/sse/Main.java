@@ -6,10 +6,14 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        if(args.length != 1){
+            System.out.println("Specify one character in the command line");
+            System.exit(0);
+        }
 	    try{
             File doc = new File("SampleText.txt");
             Scanner sc = new Scanner(doc);
-            char c = 'e';
+            char c = args[0].charAt(0);
             int count = 0;
             while(sc.hasNextLine()){
                 String line = sc.nextLine();
